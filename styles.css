@@ -1,0 +1,205 @@
+:root {
+  /* Colors */
+
+  /* Primary */
+  --Red: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+
+  /* Accent */
+  --Blue: hsl(248, 32%, 49%);
+
+  /* Neutral */
+  --Dark-Blue: hsl(249, 10%, 26%);
+  --Grayish-Blue: hsl(246, 25%, 77%);
+
+  /* Font */
+  --font: "Poppins", sans-serif;
+}
+
+/** Reset **/
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: var(--font);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--Red);
+  background-image: url(./images/bg-intro-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+body h1,
+h2,
+p {
+  margin: 0;
+}
+
+input {
+  padding: 0;
+}
+
+/** Page styles **/
+.main-container {
+  padding: 0 1.5rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.descriptions > h1 {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.descriptions > p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.3rem;
+  margin-top: 1rem;
+}
+
+.cards {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.try-free-card {
+  background-color: var(--Blue);
+  padding: 1rem 4rem;
+  line-height: 1.3rem;
+}
+
+.try-free-card > h2 {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.try-free-card span {
+  font-weight: 600;
+}
+
+.try-free-card,
+.form-container {
+  box-shadow: -1px 6px 5px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 0.5rem;
+}
+
+.form-container {
+  background-color: white;
+  padding: 1.5rem;
+}
+
+.input-form {
+  position: relative;
+}
+
+.input-form:first-of-type ~ .input-form {
+  margin-top: 1rem;
+}
+
+.input-form input {
+  color: var(--Dark-Blue);
+  border: thin solid var(--Grayish-Blue);
+  border-radius: 5px;
+  outline: none;
+  padding: 1.2rem;
+  width: 100%;
+}
+
+.input-form input::placeholder {
+  color: var(--Dark-Blue);
+  font-weight: 600;
+}
+
+.input-form svg {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 0.8rem;
+}
+
+.input-form:last-of-type input {
+  background-color: var(--Green);
+  color: inherit;
+  cursor: pointer;
+  border-bottom: 3px solid hsl(154, 56%, 44%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.form-container > p {
+  color: var(--Grayish-Blue);
+  font-size: 0.6875rem;
+  margin-top: 0.6rem;
+}
+
+.form-container > p > a {
+  text-decoration: none;
+  color: var(--Red);
+  font-weight: 600;
+}
+
+.error-text {
+  color: var(--Red);
+  font-size: 0.8rem;
+  display: none;
+  margin: 0.2rem;
+  text-align: right;
+}
+
+.input-form.active > .error-text,
+.input-form.active svg {
+  display: block;
+}
+
+.attribution {
+  margin-top: 1rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/** MediaQueries **/
+@media screen and (min-width: 1200px) {
+  body {
+    background-image: url(./images/bg-intro-desktop.png);
+    display: flex;
+    flex-direction: column;
+  }
+  .main-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 6rem auto;
+    gap: 8rem;
+  }
+
+  .descriptions {
+    text-align: start;
+    width: 600px;
+  }
+
+  .descriptions h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .cards {
+    flex-grow: 1;
+    width: 545px;
+  }
+}
